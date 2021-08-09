@@ -95,4 +95,19 @@ plt.contour(xx, yy, Z, levels=[0], linewidths=2, colors='g')
 ```
 
 # D4
+Got fastapi template.
 
+check the current logs in the container
+```
+sudo docker logs <container>
+```
+
+# D5
+Old friend.
+
+Problem: ERROR: Couldn't connect to Docker daemon at http+docker://localhost - is it running?
+```
+sudo usermod -aG docker $USER
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+sudo service docker restart
+```
