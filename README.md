@@ -93,3 +93,6 @@ Z = Z.reshape(xx.shape)
 plt.contourf(xx, yy, Z, levels=np.linspace(Z.min(), 0, 8), cmap=plt.cm.PuBu, alpha=0.5)
 plt.contour(xx, yy, Z, levels=[0], linewidths=2, colors='g')
 ```
+
+# D4
+
