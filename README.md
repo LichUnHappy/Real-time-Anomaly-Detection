@@ -111,3 +111,28 @@ sudo usermod -aG docker $USER
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 sudo service docker restart
 ```
+
+Caddy: Panic! casued by Ubutnu 20.04 LTS's resolv.conf. Pass the modified resolv.conf to caddy instance. The modified file is like following:
+```
+nameserver 127.0.0.11
+options edns0 ndots:0
+search internet-only.domain
+```
+
+# D6
+
+Rebuild the fastapt imgae  with metrics. Update the requirements.txt and rebuid it with makefile:
+```
+run:
+	sudo docker build -t jiahong/lp-fastapi:D6 -f Dockerfile .
+```
+
+Stop the current docker-compose
+```
+docker-compose down -v
+```
+
+Cannot access the prometheus in the grafana container. The solution is to replace the ip address in host network by the ip in docker network
+```
+docker inspect <prometheus container>
+```
