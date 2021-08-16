@@ -127,6 +127,11 @@ run:
 	sudo docker build -t jiahong/lp-fastapi:D6 -f Dockerfile .
 ```
 
+Run the docker-compose
+```
+ADMIN_USER=admin ADMIN_PASSWORD=admin docker-compose up -d
+```
+
 Stop the current docker-compose
 ```
 docker-compose down -v
@@ -135,4 +140,7 @@ docker-compose down -v
 Cannot access the prometheus in the grafana container. The solution is to replace the ip address in host network by the ip in docker network
 ```
 docker inspect <prometheus container>
+
+# no http://
+192.168.144.3:9090 
 ```
